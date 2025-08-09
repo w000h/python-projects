@@ -1,0 +1,48 @@
+print(r'''
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     `"=.|                  |
+|___________________|__"=._o`"-._        `"=.______________|___________________
+          |                `"=._o`"=._      _`"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+ _________|___________| ;`-.o`"=._; ." ` '`."\ ` . "-._ /_______________|_______
+|                   | |o ;    `"-.o`"=._``  '` " ,__.--o;   |
+|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
+''')
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.")
+print("Let's begin.")
+print("You arrive on Treasure Island after a long journey at sea. It is storming, but you are eager to get off the ship.")
+print("After getting off the boat and surveying the landscape, you head into the jungle.")
+print("You come upon a fork in the path. The left path leads to a river. The right leads to the cave.")
+
+choice_1 = input("Which path will you take?\n")
+
+if choice_1 == "Left" or choice_1 == "left":
+    choice_2 = input("You continue to the river.\nYou arrive to the raging rapids of the river during a storm.\nDo you wait out the storm or attempt to swim across?\n")
+    if choice_2 == "wait" or choice_2 == "Wait" or choice_2 == "wait it out" or choice_2 == "Wait it out":
+        choice_3 = input("Good choice.\nYou set up camp and wake up the next morning to calm waters.\nYou cross the river with ease.\nThe journey continues.\nAfter several days hike, you find the fort you have been looking for!\nThere are 3 doors.\nDo you choose red, blue, or yellow?\n")
+        if choice_3 == "red" or choice_3 == "Red":
+            print("You open the door to find beasts held captive for thousands of years.\nYou attempt to hold off them off but ultimately succumb to the horde.\nGame over.")
+        elif choice_3 == "blue" or choice_3 == "Blue":
+            print("You enter a dark room and the door suddenly shuts behind you.\nYou are welcomed by a crude sign that reading \"Dungeon\".\nYou are imprisoned here until the next unlucky adventurer opens the door.\nGame over.")
+        elif choice_3 == "yellow" or choice_3 == "Yellow":
+            print("You open the door to find a bright light shining on a pile of gold.\nYou have found the treasure!")
+        else:
+            print("You choose to forego the fort in search of a greater treasure.\nAfter wandering the jungle for several more days, you're food supply begins to dwindle.\nYou attempt to head back to your ship but become disoriented.\n You lose your way in the dense vegetation and run out of food.\nGame over.")
+    else:
+        print("You attempt to swim across the raging rapids of the river.\nYou are unsuccessful and are swept away, never to be seen again.\nGame over.")
+else:
+    print("You journey into the cave only to become disoriented and lost. You fall in a hole, never to be found again. Game over.")
+
