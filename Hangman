@@ -1,0 +1,95 @@
+import random
+
+word_list = ["aardvark", "baboon", "camel", "daisy", "bear"]
+chosen_word = random.choice(word_list)
+word_length = len(chosen_word)
+lives = 6
+stages = [r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', r'''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', r'''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+
+display = []
+for _ in range(word_length):
+    display.append("_")
+
+game_is_finished = False
+
+while not game_is_finished:
+
+    guess = input("Guess a letter: ").lower()
+
+    for position in range(word_length):
+        letter = chosen_word[position]
+        if letter == guess:
+            display[position] = letter
+
+    if guess not in chosen_word:
+        lives -= 1
+        if lives == 0:
+            game_is_finished = True
+
+        print("Incorrect.\n")
+    print(stages[lives])
+    print(f"{' '.join(display)}")
+
+
+    if "_" not in display:
+        game_is_finished = True
+
+if "_" not in display:
+    print("You win!")
+elif lives == 0:
+    print("You lose!")
